@@ -1,0 +1,26 @@
+In addition to var, we now have 2 new identifiers available for storing values — let and const. Unlike var, let and const have a block scope
+example of var:
+var snack = 'Meow Mix';
+
+function getFood(food) {
+    if (food) {
+        var snack = 'Friskies';
+        return snack;
+    }
+    return snack;
+}
+
+getFood(false); // undefined
+If change var to let:
+let snack = 'Meow Mix';
+
+function getFood(food) {
+    if (food) {
+        let snack = 'Friskies';
+        return snack;
+    }
+    return snack;
+}
+
+getFood(false); // 'Meow Mix'
+This change in behavior shows that you need to be careful when refactoring old code that uses var. Simply replacing var with let can lead to unpredictable program behavior.
